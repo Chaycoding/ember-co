@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Ember & Co.
 
-## Getting Started
+A single-page landing page for a fictional Colombo restaurant, built as a take-home assignment for Happy Chimps.
 
-First, run the development server:
+**Live site:** https://ember-co-gamma.vercel.app/
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Concept
+
+Live fire. The page is built around a charcoal-and-ember palette, a serif display face against a clean sans, and a hero where flames and drifting embers set the mood. The dishes are laid out like a printed menu, and hovering a row swaps the photo beside it.
+
+## Stack
+
+- Next.js (App Router) with TypeScript
+- Tailwind CSS v4
+- `next/image` for optimised images, `next/font` for self-hosted fonts (Fraunces and Inter)
+- Deployed on Vercel
+
+## Performance approach
+
+- Server-rendered, so all content is in the initial HTML
+- Client components are limited to the mobile menu, scroll-reveal observer, dish hover, and the reservation form
+- Animation is CSS only, on `transform` and `opacity`, with `prefers-reduced-motion` support
+- No animation or UI libraries
+- PageSpeed Insights: 95 mobile, 100 desktop
+
+## Project structure
+
+```
+src/
+  app/          layout, page, global styles
+  components/   Navbar, MobileMenu, Hero, Marquee, About, Dishes,
+                Reservation, Footer, RevealObserver
+public/         hero and dish images
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Run locally
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm install
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Then open http://localhost:3000.
 
-## Learn More
+## AI usage
 
-To learn more about Next.js, take a look at the following resources:
+I used Claude to plan, drafting component code, and to further enhance the build. The concept, palette, copy and image choices are mine, and I reviewed and edited the generated code.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## With more time
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Real photography
+- A validated form wired to a booking API
+- Better touch behaviour for the dish images
+- A full Lighthouse and accessibility pass
