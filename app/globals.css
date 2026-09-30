@@ -20,7 +20,23 @@ html {
 body {
   @apply bg-charcoal text-cream font-sans antialiased;
 }
+@keyframes marquee {
+  to { transform: translateX(-50%); }
+}
 
+.marquee {
+  animation: marquee 60s linear infinite;
+}
+
+.marquee:hover {
+  animation-play-state: paused;
+}
+
+.marquee-mask {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+}
 /* Floating embers in the hero */
 @keyframes rise {
   0% { transform: translateY(0) scale(1); opacity: 0; }
@@ -78,4 +94,5 @@ body {
     transform: none;
     transition: none;
   }
+  .marquee { animation: none; }
 }
