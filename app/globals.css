@@ -21,6 +21,7 @@ body {
   @apply bg-charcoal text-cream font-sans antialiased;
 }
 
+/* Floating embers in the hero */
 @keyframes rise {
   0% { transform: translateY(0) scale(1); opacity: 0; }
   15% { opacity: 0.9; }
@@ -36,7 +37,45 @@ body {
   animation: rise linear infinite;
 }
 
+/* Navbar: soft gradient by default, solid on scroll where supported */
+.nav-bg {
+  background-image: linear-gradient(to bottom, rgba(26, 21, 18, 0.7), transparent);
+}
+
+@keyframes navfade {
+  from { background-color: rgba(26, 21, 18, 0); }
+  to { background-color: rgba(26, 21, 18, 0.92); }
+}
+
+@supports (animation-timeline: scroll()) {
+  .nav-bg {
+    background-image: none;
+    animation: navfade linear both;
+    animation-timeline: scroll();
+    animation-range: 0 200px;
+  }
+}
+
+/* Scroll reveal (toggled by RevealObserver) */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.in {
+  opacity: 1;
+  transform: none;
+}
+
+/* Respect reduced-motion preferences */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .ember { animation: none; opacity: 0; }
+  .nav-bg { animation: none; }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }

@@ -1,14 +1,14 @@
 import Image from "next/image";
 
 const embers = [
-  { left: "6%", size: 4, dur: 9, delay: 0 },
-  { left: "17%", size: 3, dur: 11, delay: 3 },
-  { left: "29%", size: 5, dur: 8, delay: 1.5 },
-  { left: "41%", size: 3, dur: 12, delay: 5 },
-  { left: "54%", size: 4, dur: 10, delay: 2 },
-  { left: "66%", size: 5, dur: 9, delay: 6 },
-  { left: "78%", size: 3, dur: 11, delay: 4 },
-  { left: "90%", size: 4, dur: 8, delay: 0.5 },
+  { left: "6%", size: 6, dur: 9, delay: 0 },
+{ left: "17%", size: 4, dur: 11, delay: 3 },
+{ left: "29%", size: 7, dur: 8, delay: 1.5 },
+  { left: "41%", size: 4, dur: 12, delay: 5 },
+  { left: "54%", size: 6, dur: 10, delay: 2 },
+  { left: "66%", size: 7, dur: 9, delay: 6 },
+  { left: "78%", size: 5, dur: 11, delay: 4 },
+  { left: "90%", size: 6, dur: 8, delay: 0.5 },
 ];
 
 export default function Hero() {
@@ -19,9 +19,9 @@ export default function Hero() {
         alt="Flames licking a grill loaded with skewers"
         fill
         priority
-        quality={70}
+        quality={80}
+className="object-cover object-bottom"
         sizes="100vw"
-        className="object-cover"
       />
       <div className="absolute inset-0 bg-[linear-gradient(to_top,#1a1512,rgba(26,21,18,0.6),rgba(26,21,18,0.35))]" />
       <div className="absolute -bottom-40 left-1/2 h-[28rem] w-[60rem] -translate-x-1/2 rounded-full bg-ember/30 blur-3xl" />
@@ -45,7 +45,8 @@ export default function Hero() {
         <p className="mb-5 text-xs uppercase tracking-[0.35em] text-gold">
           Asian-fusion · Colombo
         </p>
-        <h1 className="max-w-3xl font-display text-5xl leading-[1.05] sm:text-7xl">
+       <h1 className="max-w-4xl font-display text-6xl leading-[1.02] sm:text-8xl lg:text-9xl">
+
           Fire, <em className="text-ember">fused.</em>
         </h1>
         <p className="mt-6 max-w-md text-lg text-cream/80">

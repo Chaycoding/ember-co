@@ -9,8 +9,8 @@ type DishCardProps = {
 
 export default function DishCard({ name, description, price, image }: DishCardProps) {
   return (
-    <article className="group overflow-hidden rounded-2xl bg-charcoal">
-      <div className="relative aspect-[4/3] overflow-hidden">
+    <article className="reveal group overflow-hidden rounded-2xl bg-charcoal">
+      <div className="relative aspect-4/3 overflow-hidden">
         <Image
           src={image}
           alt={name}
