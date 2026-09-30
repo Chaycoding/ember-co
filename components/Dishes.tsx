@@ -40,9 +40,9 @@ export default function Dishes() {
   return (
     <section id="dishes" className="scroll-mt-4 bg-coal py-24 md:py-32">
       <div className="mx-auto grid max-w-6xl gap-14 px-6 lg:grid-cols-[5fr_6fr] lg:items-start">
-   <div className="reveal lg:sticky lg:top-24">
-  <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-charcoal">
-          {dishes.map((d, i) => (
+  <div className="reveal lg:sticky lg:top-24">
+  <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-charcoal md:aspect-[16/9] lg:aspect-[4/5]">
+       {dishes.map((d, i) => (
             <Image
               key={d.image}
               src={d.image}
