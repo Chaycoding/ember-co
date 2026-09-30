@@ -47,16 +47,22 @@ export default function Dishes() {
 
           <ol className="mt-12 divide-y divide-cream/10">
             {dishes.map((d, i) => (
-              <li key={d.name} className="reveal py-8">
-                <div className="flex items-baseline gap-4">
-                  <span className="font-display text-sm text-ember">0{i + 1}</span>
-                  <h3 className="font-display text-2xl md:text-3xl">{d.name}</h3>
-                  <span
-                    aria-hidden
-                    className="min-w-4 flex-1 self-end border-b border-dotted border-cream/30 pb-1.5"
-                  />
-                  <span className="whitespace-nowrap text-gold">{d.price}</span>
-                </div>
+             <li
+  key={d.name}
+  className="reveal group py-8"
+  style={{ transitionDelay: `${i * 90}ms` }}
+>
+  <div className="flex items-baseline gap-4">
+    <span className="font-display text-sm text-ember">0{i + 1}</span>
+    <h3 className="font-display text-2xl transition duration-300 group-hover:translate-x-1.5 group-hover:text-gold md:text-3xl">
+      {d.name}
+    </h3>
+    <span
+      aria-hidden
+      className="min-w-4 flex-1 self-end border-b border-dotted border-cream/30 pb-1.5 transition-colors duration-300 group-hover:border-gold"
+    />
+    <span className="whitespace-nowrap text-gold">{d.price}</span>
+  </div>
                 <p className="mt-2 pl-9 text-sm text-cream/70">{d.description}</p>
               </li>
             ))}

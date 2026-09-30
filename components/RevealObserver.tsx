@@ -4,7 +4,7 @@ import { useEffect } from "react";
 
 export default function RevealObserver() {
   useEffect(() => {
-    const els = document.querySelectorAll<HTMLElement>(".reveal");
+    const els = document.querySelectorAll<HTMLElement>(".reveal, .reveal-clip");
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((e) => {

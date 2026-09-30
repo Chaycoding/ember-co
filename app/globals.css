@@ -59,16 +59,71 @@ body {
 }
 
 @keyframes navfade {
-  from { background-color: rgba(26, 21, 18, 0); }
-  to { background-color: rgba(26, 21, 18, 0.92); }
+  from { background-color: rgba(26, 21, 18, 0); border-bottom-color: rgba(246, 239, 228, 0); }
+  to { background-color: rgba(26, 21, 18, 0.98); border-bottom-color: rgba(246, 239, 228, 0.08); }
 }
-
 @supports (animation-timeline: scroll()) {
   .nav-bg {
     background-image: none;
     animation: navfade linear both;
     animation-timeline: scroll();
     animation-range: 0 200px;
+  }
+}
+
+
+/* Hero entrance */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: none; }
+}
+.hero-in { animation: fade-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.d1 { animation-delay: 0.1s; }
+.d2 { animation-delay: 0.25s; }
+.d3 { animation-delay: 0.4s; }
+.d4 { animation-delay: 0.55s; }
+
+/* Slow zoom on hero photo */
+@keyframes slow-zoom {
+  from { transform: scale(1); }
+  to { transform: scale(1.08); }
+}
+.hero-zoom { animation: slow-zoom 20s ease-out both; }
+
+/* Glow breathing */
+@keyframes breathe {
+  0%, 100% { opacity: 0.55; }
+  50% { opacity: 1; }
+}
+.glow { animation: breathe 6s ease-in-out infinite; }
+
+/* Clip reveal for images */
+.clip-inner {
+  clip-path: inset(0 0 100% 0);
+  transition: clip-path 1.1s cubic-bezier(0.22, 1, 0.36, 1) 0.15s;
+}
+
+.reveal.in .clip-inner {
+  clip-path: inset(0);
+}
+/* Scroll progress line (where supported) */
+@keyframes progress {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+.progress {
+  position: fixed;
+  inset: 0 0 auto 0;
+  height: 2px;
+  background: var(--color-ember);
+  transform: scaleX(0);
+  transform-origin: left;
+  z-index: 40;
+}
+@supports (animation-timeline: scroll()) {
+  .progress {
+    animation: progress linear both;
+    animation-timeline: scroll(root);
   }
 }
 
@@ -95,4 +150,5 @@ body {
     transition: none;
   }
   .marquee { animation: none; }
+  .clip-inner { clip-path: none; transition: none; }
 }

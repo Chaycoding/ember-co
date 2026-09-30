@@ -4,15 +4,17 @@ export default function About() {
   return (
     <section id="about" className="scroll-mt-4 py-24 md:py-32">
       <div className="mx-auto grid max-w-6xl items-center gap-14 px-6 md:grid-cols-2">
-        <div className="reveal relative mx-auto aspect-[4/5] w-full max-w-md overflow-hidden rounded-t-full">
-          <Image
-            src="/about.jpg"
-            alt="Inside the Ember & Co. dining room"
-            fill
-            sizes="(min-width: 768px) 40vw, 90vw"
-            className="object-cover"
-          />
-        </div>
+      <div className="reveal mx-auto w-full max-w-md">
+  <div className="clip-inner relative aspect-[4/5] w-full overflow-hidden rounded-t-full">
+    <Image
+      src="/about.jpg"
+      alt="Inside the Ember & Co. dining room"
+      fill
+      sizes="(min-width: 768px) 40vw, 90vw"
+      className="object-cover"
+    />
+  </div>
+</div>
         <div className="reveal">
           <p className="mb-4 text-xs uppercase tracking-[0.35em] text-gold">Our story</p>
           <h2 className="font-display text-4xl leading-tight md:text-5xl">

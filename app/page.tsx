@@ -9,7 +9,9 @@ import Marquee from "@/components/Marquee";
 
 export default function Home() {
   return (
-    <>
+    <><div aria-hidden className="progress" />
+<RevealObserver />
+<Navbar />
       <Navbar />
       <RevealObserver />
       <main>

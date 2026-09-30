@@ -20,11 +20,12 @@ export default function Hero() {
         fill
         priority
         quality={80}
-className="object-cover object-bottom"
+        className="object-cover object-bottom hero-zoom"
         sizes="100vw"
       />
       <div className="absolute inset-0 bg-[linear-gradient(to_top,#1a1512,rgba(26,21,18,0.6),rgba(26,21,18,0.35))]" />
-      <div className="absolute -bottom-40 left-1/2 h-[28rem] w-[60rem] -translate-x-1/2 rounded-full bg-ember/30 blur-3xl" />
+     <div className="glow absolute -bottom-40 left-1/2 h-[28rem] w-[60rem] -translate-x-1/2 rounded-full bg-ember/30 blur-3xl" />
+
 
       {embers.map((e, i) => (
         <span
@@ -42,17 +43,17 @@ className="object-cover object-bottom"
       ))}
 
       <div className="relative z-10 mx-auto w-full max-w-6xl px-6 pt-24">
-        <p className="mb-5 text-xs uppercase tracking-[0.35em] text-gold">
+        <p className="hero-in d1 mb-5 text-xs uppercase tracking-[0.35em] text-gold">
           Asian-fusion · Colombo
         </p>
-       <h1 className="max-w-4xl font-display text-6xl leading-[1.02] sm:text-8xl lg:text-9xl">
+       <h1 className="hero-in d2 max-w-4xl font-display text-6xl leading-[1.02] sm:text-8xl lg:text-9xl">
 
           Fire, <em className="text-ember">fused.</em>
         </h1>
-        <p className="mt-6 max-w-md text-lg text-cream/80">
+        <p className="hero-in d3 mt-6 max-w-md text-lg text-cream/80">
           Contemporary Asian cooking, finished over live coals in the heart of the city.
         </p>
-        <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+        <div className="hero-in d4 mt-10 flex flex-col gap-4 sm:flex-row">
           <a
             href="#reserve"
             className="rounded-full bg-ember px-8 py-3 text-center text-xs font-semibold uppercase tracking-[0.2em] text-charcoal transition hover:bg-gold"
