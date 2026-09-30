@@ -48,7 +48,13 @@ export default function Reservation() {
             </label>
             <label>
               <span className="mb-2 block text-xs uppercase tracking-widest text-cream/60">Date</span>
-              <input required name="date" type="date" className={field} />
+              <input
+  required
+  name="date"
+  type="date"
+  min={new Date().toISOString().split("T")[0]}
+  className={field}
+/>
             </label>
             <label>
               <span className="mb-2 block text-xs uppercase tracking-widest text-cream/60">Time</span>
